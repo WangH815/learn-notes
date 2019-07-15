@@ -1,10 +1,10 @@
 Git笔记
 
-http://www.runoob.com/git/git-tutorial.html    //runoob教程
-http://www.runoob.com/manual/git-guide/  //简明教程
-https://www.yiibai.com/git/git-quick-start.html#article-start  //易百教程
+http://www.runoob.com/git/git-tutorial.html                                           //runoob教程
+http://www.runoob.com/manual/git-guide/                                               //简明教程
+https://www.yiibai.com/git/git-quick-start.html#article-start                         //易百教程
 https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/  //廖雪峰
-https://git-scm.com/docs  //官方操作手册
+https://git-scm.com/docs                                                              //官方操作手册
 
 git简介
 
@@ -86,13 +86,13 @@ sudo apt-get install git  //基于 Debian 的发行版
 2.配置用户名和Email/config
 git config --global user.name "username"
 git config --global user.email example@example.com
-git config --global core.editor emacs  //可选，修改git默认编辑器为emacs，默认为Vim
-git config --global merge.tool vimdiff  //可选，修改差异分析工具为vimdiff
-git config --list  //显示配置信息
+git config --global core.editor emacs     //可选，修改git默认编辑器为emacs，默认为Vim
+git config --global merge.tool vimdiff    //可选，修改差异分析工具为vimdiff
+git config --list                         //显示配置信息
 
 3.创建仓库/repository
-git init [dir] //在指定目录初始化仓库，当不写目录时默认在当前目录初始化仓库
-git clone [repo_url] [dir]  //克隆特定版本的仓库到指定目录，repo_url为仓库地址
+git init [dir]               //在指定目录初始化仓库，当不写目录时默认在当前目录初始化仓库
+git clone [repo_url] [dir]   //克隆特定版本的仓库到指定目录，repo_url为仓库地址
 
 4.基本操作命令
 git add filename/file_list  //将一个或多个文件快照添加到缓存区，一般会多次用到
@@ -111,22 +111,22 @@ git mv                      //用于移动或重命名一个文件、目录、�
 
 5.分支管理/branch
 分支模型是的Git从版本控制家族中脱颖而出的主要原因
-git branch  //列出所有分支
-git branch branchname  //创建分支，多个分支不需要多个目录
-git merge branchname  //合并分支
-git checkout branchname  //切换分支
+git branch                  //列出所有分支
+git branch branchname       //创建分支，多个分支不需要多个目录
+git merge branchname        //合并分支
+git checkout branchname     //切换分支
 git checkout -b branchname  //命令来创建新分支并立即切换到该分支下
 git checkout -d branchname  //删除分支
 
 6.提交历史的查看/log
-git log  //查看提交历史
-git log --oneline -n  //简洁形式显示前多少条改动，-n可以不加
-git log --graph  //开启拓扑选项，查看分支合并情况
-git log --reverse  //逆向显示
-git log --author=Linus  //按作者查看日志
+git log                         //查看提交历史
+git log --oneline -n            //简洁形式显示前多少条改动，-n可以不加
+git log --graph                 //开启拓扑选项，查看分支合并情况
+git log --reverse               //逆向显示
+git log --author=Linus          //按作者查看日志
 git log --before={3.weeks.ago}  //三周前
-git log --after={2018-10-10}  //指定日期之后
-git log --no-merges  //不显示合并日志
+git log --after={2018-10-10}    //指定日期之后
+git log --no-merges             //不显示合并日志
 还有--since/before/until/after等选项
 
 7.标签/tag
@@ -141,8 +141,8 @@ git remote add [shortname] [url]  //添加远程库
 
 远程仓库配置步骤
 a)注册Github账号，地址：https://github.com
-b)在本地生成SSH Key  //本地Git仓库和GitHub仓库是通过SSH加密的
-ssh-keygen -t rsa -C "Email"  //Email为GitHub注册的邮箱，生成过程会要求确认路径和输入密码
+b)在本地生成SSH Key               //本地Git仓库和GitHub仓库是通过SSH加密的
+ssh-keygen -t rsa -C "Email"     //Email为GitHub注册的邮箱，生成过程会要求确认路径和输入密码
 生成的公钥位置 ~/.ssh/id_rsa.pub
 c)在远程仓库配置公钥
 在Github官网登陆后，在Accout-->Setting-->New SSH key中添加
@@ -151,14 +151,14 @@ d)验证
 ssh -T git@github.com  //会提示成功
 
 常用命令
-git remote  //查看当前配置的远程仓库
-git remote -v  //显示别名的实际链接地址
-git fetch repo_name  //从远程仓库下载新分支与数据，repo_name为别名
+git remote                       //查看当前配置的远程仓库
+git remote -v                    //显示别名的实际链接地址
+git fetch repo_name              //从远程仓库下载新分支与数据，repo_name为别名
 git merge repo_name/branch_name  //从远程仓库的某分支提取数据并尝试合并到当前分支
-git push repo_name branch_name  //推送新分支到某个远程仓库
-git remote rm repo_name  //删除远程仓库
-git remote add repo_name url  //添加远程库
-                              //例如：git remote add mygit git@github:wangh/mygit-test.git
+git push repo_name branch_name   //推送新分支到某个远程仓库
+git remote rm repo_name          //删除远程仓库
+git remote add repo_name url     //添加远程库
+                                 //例如：git remote add mygit git@github:wangh/mygit-test.git
 注：Github由于服务器在国外，存在网速和连接不稳定方面的问题
     可使用Cloud Studio平台(腾讯的)或码云(https://gitee.com/)替换，步骤与Girhub类似
 
@@ -166,9 +166,9 @@ git remote add repo_name url  //添加远程库
 以CentOS为例
 1)安装Git
 yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel perl-devel
-yum install git  //安装git
+yum install git     //安装git
 注：在Ubuntu可使用apt install git来安装
-groupadd git  //新建git用户组
+groupadd git       //新建git用户组
 useadd git -g git  //创建git用户(Linux)
 2)创建证书
 cd /home/git
