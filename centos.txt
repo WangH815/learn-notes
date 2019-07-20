@@ -1,4 +1,4 @@
-CentOS 7 18.04
+CentOS 7
 
 #常用命令
 #打包解包压缩解压
@@ -88,9 +88,11 @@ hostnamectl set-hostname "" --pretty
 
 CentOS 6.9
 
-最小化安装
-
-#配置网络
+#vm复制无法获取ip处理
+    原因：复制之后mac和uuid与原系统一致导致
+解决方案：删除 HWADDR 和 UUID 配置以及网卡相关信息文件后重启系统
+vi /etc/sysconfig/network-scripts/ifcfg-eth0
+rm -f /etc/udev/rules.d/70-persistent-net.rules
 
 
 
