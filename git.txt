@@ -1,4 +1,4 @@
-Git笔记
+git笔记
 
 http://www.runoob.com/git/git-tutorial.html                                           //runoob教程
 http://www.runoob.com/manual/git-guide/                                               //简明教程
@@ -18,16 +18,16 @@ git简介
 5.有能力高效管理类似 Linux 内核一样的超大规模项目(速度和数据量)
 
 与集中式版本控制工具(SVN)相比
-1.GIT是分布式的，SVN不是：
-   这是GIT和其它非分布式的版本控制系统，例如SVN，CVS等，最核心的区别。
-2.GIT把内容按元数据方式存储，而SVN是按文件：
+1.git是分布式的，SVN不是：
+   这是git和其它非分布式的版本控制系统，例如SVN，CVS等，最核心的区别。
+2.git把内容按元数据方式存储，而SVN是按文件：
    所有的资源控制系统都是把文件的元信息隐藏在一个类似.svn,.cvs等的文件夹里。
-3.GIT分支和SVN的分支不同：
+3.git分支和SVN的分支不同：
    分支在SVN中一点不特别，就是版本库中的另外的一个目录。
-4.GIT没有一个全局的版本号，而SVN有：
-   目前为止这是跟SVN相比GIT缺少的最大的一个特征。
-5.GIT的内容完整性要优于SVN：
-   GIT的内容存储使用的是SHA-1哈希算法。这能确保代码内容的完整性，
+4.git没有一个全局的版本号，而SVN有：
+   目前为止这是跟SVN相比git缺少的最大的一个特征。
+5.git的内容完整性要优于SVN：
+   git的内容存储使用的是SHA-1哈希算法。这能确保代码内容的完整性，
    确保在遇到磁盘故障和网络问题时降低对版本库的破坏。
 
 基本概念
@@ -48,18 +48,18 @@ Centralized Version Control Systems，简称 CVCS
 
 分布式
 Distributed Version Control System，简称 DVCS
-如：Git、Mercurial、Bazaar 以及 Darcs 等
+如：git、Mercurial、Bazaar 以及 Darcs 等
 主要特点：
 客户端并不只提取最新版本的文件快照，而是把代码仓库完整地镜像下来。 
 这么一来，任何一处协同工作用的服务器发生故障，事后都可以用任何一个镜像出来的本地仓库恢复。
 
 数据的完整性
-Git 用以计算校验和的机制叫做 SHA-1 散列(hash，哈希)，用于保证数据的完整性
+git 用以计算校验和的机制叫做 SHA-1 散列(hash，哈希)，用于保证数据的完整性
 
 
 工作流程
 一般工作流程如下：
-1.克隆 Git 资源作为工作目录。
+1.克隆 git 资源作为工作目录。
 2.在克隆的资源上添加或修改文件。
 3.如果其他人修改了，你可以更新资源。
 4.在提交前查看修改。
@@ -75,7 +75,7 @@ Git 用以计算校验和的机制叫做 SHA-1 散列(hash，哈希)，用于保
 1.工作区：就是你在电脑里能看到的目录。
 2.暂存区：英文叫stage, 或index。一般存放在 ".git目录下" 下的index文件（.git/index）中，
           所以我们把暂存区有时也叫作索引（index）。
-3.版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库，也叫仓库。
+3.版本库：工作区有一个隐藏目录.git，这个不算工作区，而是git的版本库，也叫仓库。
 
 
 使用简介
@@ -110,7 +110,7 @@ git rm --cached <file>      //git add的逆操作，不会删除工作区文件
 git mv                      //用于移动或重命名一个文件、目录、软连接。
 
 5.分支管理/branch
-分支模型是的Git从版本控制家族中脱颖而出的主要原因
+分支模型是的git从版本控制家族中脱颖而出的主要原因
 git branch                  //列出所有分支
 git branch branchname       //创建分支，多个分支不需要多个目录
 git merge branchname        //合并分支
@@ -130,22 +130,22 @@ git log --no-merges             //不显示合并日志
 还有--since/before/until/after等选项
 
 7.标签/tag
-通过标签可以让Git记住那个重要阶段提交的快照
+通过标签可以让git记住那个重要阶段提交的快照
 git tag  //查看所有标签
 git tag -a v1.0  //添加带注解的标签v1.0，-a选项可以记录标签的时间作者等信息，可以不加但推荐使用
 git tag -a v0.9 85fc7e7 //追加标签，85fc7e7为最后一个文件提交的site，可通过git log查询
 
-8.远程仓库/Github
+8.远程仓库/github
 基于git的代码托管平台
 git remote add [shortname] [url]  //添加远程库
 
 远程仓库配置步骤
-a)注册Github账号，地址：https://github.com
-b)在本地生成SSH Key               //本地Git仓库和GitHub仓库是通过SSH加密的
-ssh-keygen -t rsa -C "Email"     //Email为GitHub注册的邮箱，生成过程会要求确认路径和输入密码
+a)注册github账号，地址：https://github.com
+b)在本地生成SSH Key               //本地git仓库和gitHub仓库是通过SSH加密的
+ssh-keygen -t rsa -C "Email"     //Email为gitHub注册的邮箱，生成过程会要求确认路径和输入密码
 生成的公钥位置 ~/.ssh/id_rsa.pub
 c)在远程仓库配置公钥
-在Github官网登陆后，在Accout-->Setting-->New SSH key中添加
+在github官网登陆后，在Accout-->Setting-->New SSH key中添加
 d)验证
 本地执行
 ssh -T git@github.com  //会提示成功
@@ -159,12 +159,12 @@ git push repo_name branch_name   //推送新分支到某个远程仓库
 git remote rm repo_name          //删除远程仓库
 git remote add repo_name url     //添加远程库
                                  //例如：git remote add mygit git@github:wangh/mygit-test.git
-注：Github由于服务器在国外，存在网速和连接不稳定方面的问题
+注：github由于服务器在国外，存在网速和连接不稳定方面的问题
     可使用Cloud Studio平台(腾讯的)或码云(https://gitee.com/)替换，步骤与Girhub类似
 
-9.Git服务器搭建
+9.git服务器搭建
 以CentOS为例
-1)安装Git
+1)安装git
 yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel perl-devel
 yum install git     //安装git
 注：在Ubuntu可使用apt install git来安装
@@ -177,8 +177,8 @@ chmod 755 .ssh
 touch .ssh/authorized_keys
 chmod 644 .ssh/authorized_keys
 将需要登录的主机生成的ssh公钥放入authorized_keys文件中
-3)初始化Git仓库
-选定或创建一个目录作为Git仓库
+3)初始化git仓库
+选定或创建一个目录作为git仓库
 在此目录执行
 chown git:git dir/
 cd dir
@@ -208,6 +208,6 @@ build
 # My configurations:
 db.ini
 deploy_key_rsa
-3.提交此文件到Git
+3.提交此文件到git
 注：使用 git add -f filename 命令可以强制提交符合 .gitignore 中规则的文件。
 
